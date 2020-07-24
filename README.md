@@ -1,4 +1,7 @@
 # reflection
+
+![build status](https://img.shields.io/docker/cloud/build/richardjkendall/reflection)
+
 This is a really basic data storage API which I created to support building web prototypes.  
 
 It is packaged as a Docker container.
