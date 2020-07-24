@@ -81,3 +81,24 @@ curl -X PUT -H "content-type: application/json" -d @datafile.json http://[endpoi
 ```
 
 This will return a HTTP 400 error if the request is not well formed JSON.
+
+## Deleting an object
+
+You can delete an object with a specific ID by issuing a DELETE request for that specific ID.  E.g.
+
+```bash
+curl -X DELETE http://[endpoint]/[object]/[id]
+```
+
+# Running this directly
+
+You can run the script directly (without Docker) as follows:
+
+```bash
+python -m venv .env
+source .env/bin/activate
+pip install -r requirements.txt
+waitress-serve --call 'reflection:create_app'
+```
+
+This will create a directory called \_data\_ where any data will be stored.  If you want to change this then set an environment variable called DATA_STORE to the path where the data should be stored.  This path is relative to the location where the script is being run from.
