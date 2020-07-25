@@ -3,6 +3,7 @@ import os
 import uuid
 
 from flask import Flask, make_response, request, jsonify
+from flask_cors import CORS
 
 def return_success_response(payload):
   resp = make_response(jsonify(payload), 200)
@@ -94,6 +95,7 @@ def rem_obj(dir, obj, id):
   
 def create_app(test_config=None):
   app = Flask(__name__)
+  CORS(app)
   path = ""
   # check if the store directory exists
   if "DATA_STORE" in os.environ:
